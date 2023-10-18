@@ -24,6 +24,7 @@ print idx_2
 ```
 
 ## 코드 작성
+
 ```c
 int main(void) {
   int matrix[6];
