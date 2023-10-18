@@ -17,6 +17,7 @@ max is 12.560000
 max is k
 ```
 
+## 코드 작성
 ```c
 int main(void) {
   char a,b;
