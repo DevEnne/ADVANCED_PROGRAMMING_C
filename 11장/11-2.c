@@ -9,11 +9,8 @@ int main(void){
     int i;
 
     for(i=0; i<len; i++){
-        if(i%2 != 0){
-        }
-        else{
+        if(i%2 == 0){
             printf("%c", a[i]);
         }
     }
-    
 }
