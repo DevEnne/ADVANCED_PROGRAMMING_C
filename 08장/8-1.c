@@ -1,27 +1,21 @@
 #include <stdio.h>
 
-    void printA(int n){
-        if(n==1){
-            printf("A");
-        }
-        else{
-            printf("A");
-            printA(n-1);
-        }
+void printP(int a){
+    int i;
+    if(a==0){
+        return;
     }
-
-int main (void){
-    int a;
-    scanf("%d", &a);
-
-    int count = a;
-    int i,k;
-
-    for(i=a; i>=1; i--){
-        printA(i);
-        printf("\n");
-        count--;
+    for(i=0; i<a; i++){
+        printf("A");
     }
+    printf("\n");
+    a = a-1;
+    printP(a);
+}
 
+int main(void){
+    int number;
+    scanf("%d", &number);
 
+    printP(number);
 }
