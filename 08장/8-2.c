@@ -1,57 +1,25 @@
 #include <stdio.h>
+int result(int month, int day){
+    int month_day[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int result_day = 0;
 
-int main() {
-    int m, d, ld = 0;
+    for(int i = month; i<=12; i++){
+        if(i == month){
+            result_day = result_day + month_day[i] + 1 - day;
+        }
+        else{
+            result_day = result_day + month_day[i];
+        }
+    }
+
+    return result_day;
+}
+
+
+int main(void){
+    int m,d;
     scanf("%d월 %d일", &m, &d);
-
-    d -= 1;
-
-    switch (m) {
-    case 1:
-    case 3:
-    case 5:
-    case 7:
-    case 8:
-    case 10:
-    case 12 :
-        d = 31 - d;
-        break;
-    case 2 :
-        d = 28 - d;
-        break;
-    case 4:
-    case 6:
-    case 9:
-    case 11:
-        d = 30 - d;
-        break;
-    }
-
-    switch (m+1) {
-    case 1:
-    case 2:
-        ld += 28;
-    case 3:
-        ld += 31;
-    case 4:
-        ld += 30;
-    case 5:
-        ld += 31;
-    case 6:
-        ld += 30;
-    case 7:
-        ld += 31;
-    case 8:
-        ld += 31;
-    case 9:
-        ld += 30;
-    case 10:
-        ld += 31;
-    case 11:
-        ld += 30;
-    case 12:
-        ld += 31;
-    }
-
-    printf("%d일 남음", d + ld);
+    
+    int days = result(m,d);
+    printf("%d일 남음", days);
 }
